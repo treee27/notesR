@@ -4,6 +4,9 @@ const App = () => {
   const [text, setText] = useState("");
   const [data, setData] = useState("");
   const [task, setTask] = useState([]);
+  const deleteNote=()=>{
+    console.log('note deleted successfully...')
+  }
 
   const submithandler = (e) => {
     e.preventDefault();
@@ -63,6 +66,8 @@ const App = () => {
                 {item.text || "Untitled"}
               </h3>
               <p className="text-gray-700 text-sm">{item.data || "No details"}</p>
+              <button onClick={deleteNote}
+              className="bg-red-500  rounded-4xl text-sm p-2 mb-1 mt-12 items-center">Delete</button>
             </div>
           ))}
         </div>
